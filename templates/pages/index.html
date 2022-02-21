@@ -15,24 +15,25 @@
 
 </head>
 <body>
+    <div class="container">
+        <!-- Header -->
+        {% include 'partials/_header.html' %}
 
-    <!-- Header -->
-    {% include 'partials/_header.html' %}
+        <!-- HOME -->
+        {% include 'pages/_home.html' %}
+        
+        <!-- RESUME -->
+        {% include 'pages/_resume.html' %}
 
-    <!-- HOME -->
-    {% include 'pages/_home.html' %}
-    
-    <!-- RESUME -->
-    {% include 'pages/_resume.html' %}
+        <!-- XP -->
+        {% include 'pages/_xp.html' %}
 
-    <!-- XP -->
-    {% include 'pages/_xp.html' %}
+        <!-- CONTACT -->
+        {% include 'pages/_contact.html' %}
 
-    <!-- CONTACT -->
-    {% include 'pages/_contact.html' %}
-
-    <!-- Footer -->
-    {% include 'partials/_footer.html' %}
+        <!-- Footer -->
+        {% include 'partials/_footer.html' %}
+    </div>
 
     <!-- Scripts -->
     {% include 'partials/_foot_scripts.html' %}
