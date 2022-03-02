@@ -8,7 +8,6 @@ def index(request):
     # Hardcoded for name= for now
     resume_url = Resume.objects.filter(name='Tim Andrews').only('filename').first()
 
-    context = {
-        'resume_url': resume_url,
-    }
+    context = {'resume_url': resume_url,}
+
     return render(request, 'pages/index.html', {'context': context})
