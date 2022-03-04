@@ -13,6 +13,6 @@ media
 
 _theme_source/
 /static/
-pages/migrations
-xp/migrations
+migrations/
 vresume/prod_settings.py
+
