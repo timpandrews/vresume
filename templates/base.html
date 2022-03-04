@@ -15,25 +15,15 @@
     <title>Tim Andrews - Developer/IT Professional</title>
 
 </head>
+
 <body>
     <div class="container">
         <!-- Header -->
         {% include 'partials/_header.html' %}
 
-        <!-- HOME -->
-        {% include 'pages/_home.html' %}
+        {% block content%}
         
-        <!-- RESUME -->
-        {% include 'pages/_resume.html' %}
-
-        <!-- XP -->
-        {% include 'pages/_xp.html' %}
-
-        <!-- CONTACT -->
-        {% include 'pages/_contact.html' %}
-
-        <!-- Footer -->
-        {% include 'partials/_footer.html' %}
+        {% endblock %}
     </div>
 
     <!-- Scripts -->
@@ -41,5 +31,3 @@
     
 </body>
 </html>
-
-

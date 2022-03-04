@@ -1,6 +1,8 @@
+{% extends 'base.html' %}
 {% load static %}
 
-<div id="home" class="collapse show">
+{% block content %}
+<div id="home">
     <div class="card card-body bg-primary text-white py-5">
         <h2>All about Me!</h2>
         <p class="lead">
@@ -52,3 +54,4 @@
         </div>
     </div>
 </div>
+{% endblock %}
