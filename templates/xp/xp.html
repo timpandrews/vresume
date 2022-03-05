@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+{% comment %} <pre>{% debug %}</pre> {% endcomment %}
+{{ resume_url.filename }}
+<div id='work' class=''>
+    <div class='card card-body bg-info text-white py-5'>
+        <h2>My Work</h2>
+        <p class='lead'>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, cumque.
+        </p>
+    </div>
+    <div class='card card-body py-5'>
+        <h3>Cool things I've worked on</h3>  
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, quam officia quia porro accusamus enim.</p>
+        {% for item in xp_list %}
+            <div class='card mb-4'>
+                <div class='card-body'>
+                    <h2 class='card-title'>{{ item.title }}</h2>
+                    <p class='card-text text-muted h6'>{{ item.author }} | {{ item.created_on}} </p>
+                    <p class='card-text'>{{item.content|slice:':200' }}</p>
+                    <a target='_self' href="{% url 'xp_detail' item.slug %}" class='btn btn-primary'>Read More &rarr;</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

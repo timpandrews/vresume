@@ -4,9 +4,15 @@
 <footer id="main-footer" class="p-5 bg-dark text-white">
     <div class="row">
         <div class="col-md-6">
-             <a href='media/{{ context.resume_url.filename }}' class="btn btn-outline-light">
-                 <i class="fa-solid fa-file"></i> Download Resume
-             </a>
+            {% if context %}
+                <a href='media/{{ context.resume_url.filename }}' class="btn btn-outline-light">
+                    <i class="fa-solid fa-file"></i> Download Resume
+                </a>
+            {% else %}
+                <a href='media/{{ resume_url.filename }}' class="btn btn-outline-light">
+                    <i class="fa-solid fa-file"></i> Download Resume
+                </a>
+            {% endif %}
         </div>
     </div> 
 </footer>

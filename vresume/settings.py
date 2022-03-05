@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Installed Apps
+    'django_extensions',
     # My Local Apps
     'pages.apps.PagesConfig',
     'xp.apps.XpConfig',
