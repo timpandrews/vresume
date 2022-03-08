@@ -20,8 +20,7 @@
                                 </div>
                             </div>
                         {% endfor %}
-                    </div>
-                    {% if is_paginated %}
+                        {% if is_paginated %}
                         <nav aria-label="Page navigation conatiner">
                             <ul class="pagination justify-content-center">
                                 {% if page_obj.has_previous %}
@@ -40,7 +39,7 @@
                                 {% for i in paginator.page_range %}
                                     {% if page_obj.number == i %}
                                         <li class="page-item active">
-                                            <a class="page-link" href="#" disabled>{{ i }}</a>
+                                            <span class="page-link" href="#">{{ i }}</span>
                                         </li>
                                     {% else %}
                                         <li class="page-item">
@@ -59,8 +58,8 @@
                                 {% endif %}
                             </ul>
                         </nav>
-                    
                     {% endif %}
+                    </div>
                 </div>
                 {% block sidebar %}{% include 'partials/_xp_sidebar.html' %}{% endblock sidebar %} 
             </div>
