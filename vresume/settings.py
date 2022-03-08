@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Installed Apps
     'django_extensions',
+    'django_summernote',
     # My Local Apps
     'pages.apps.PagesConfig',
     'xp.apps.XpConfig',
@@ -140,6 +141,9 @@ STATICFILES_DIRS = [
 # Media Folder Settings
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = 'media/'
+
+# Summernote editor
+SUMMERNOTE_THEME = 'bs4'
 
 
 try:
