@@ -8,6 +8,7 @@ from xp.models import Xp
 class XpList(generic.ListView):
     queryset = Xp.objects.filter(status=1).order_by('-created_at')
     template_name = 'xp/xp.html'
+    paginate_by = 3
 
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get the context
