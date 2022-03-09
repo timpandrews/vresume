@@ -16,13 +16,14 @@ class Xp(models.Model):
     content = models.TextField()
     status = models.IntegerField(choices=STATUS, default=0)
     hero_image = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
+    sort_override = models.IntegerField(default=99)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True) 
 
     class Meta:
         verbose_name_plural = "Xp"
-        ordering = ['-created_at']
+        ordering = ['sort_override', '-created_at']
     
     def __str__(self):
         return self.title

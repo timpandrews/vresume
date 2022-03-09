@@ -5,7 +5,7 @@ from xp.models import Xp
 
 
 class XpAdmin(SummernoteModelAdmin):
-    list_display = ('id', 'title', 'slug', 'author', 'status', 'created_at', 'updated_at', 'hero_image',)
+    list_display = ('id', 'title', 'slug', 'author', 'status', 'sort_override', 'created_at', 'updated_at', 'hero_image',)
     list_editable = ('status'),
     list_filter = ('status',)
     search_fields = ['title', 'content']
