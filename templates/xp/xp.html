@@ -15,11 +15,17 @@
                                 <div class='card-body'>
                                     <h2 class='card-title'>{{ item.title }}</h2>
                                     <p class='card-text text-muted h6'>{{ item.author }} | {{ item.created_on}} </p>
-                                    <p class='card-text'>{{item.content|slice:':350'|safe }} ...</p>
+                                    <p class='card-text'>
+                                        {{ item.content|slice:':350'|safe }} ...
+                                    </p>
                                     <a target='_self' href="{% url 'xp_detail' item.slug %}" class='btn btn-primary'>Read More &rarr;</a>
                                 </div>
                             </div>
                         {% endfor %}
+
+                        <!-- Pagination -->
+                        {% include 'partials/_xp_pagination.html' %}
+
                     </div>
                 </div>
                 <div class="col-md-4 card mb-4 mt-3 float-right ">

@@ -144,6 +144,7 @@ MEDIA_URL = 'media/'
 
 # Summernote editor
 SUMMERNOTE_THEME = 'bs4'
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 
 try:
