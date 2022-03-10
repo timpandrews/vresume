@@ -1,6 +1,8 @@
+from re import T
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
 
+from taggit.models import TaggedItem
 from xp.models import Xp
 
 
@@ -16,3 +18,8 @@ class XpAdmin(SummernoteModelAdmin):
     verbose_name = 'Xp'
 
 admin.site.register(Xp, XpAdmin)
+
+
+class TaggedItemAdmin(admin.ModelAdmin):
+    pass
+admin.site.register(TaggedItem, TaggedItemAdmin)

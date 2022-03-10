@@ -1,8 +1,6 @@
-from ssl import create_default_context
-from statistics import mode
-from django.db import models
 from django.contrib.auth.models import User
-
+from django.db import models
+from taggit.managers import TaggableManager
 
 STATUS = (
     (0, "Draft"),
@@ -17,6 +15,7 @@ class Xp(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     hero_image = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     sort_override = models.IntegerField(default=99)
+    tags = TaggableManager()
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True) 
