@@ -19,10 +19,28 @@
                         <p class="card-text">{{ object.content | safe }}</p>
                     </div>
                     <div>
-                        {% for tag in names %}
-                            <button class="btn btn-primary btn-sm" type="button">
-                                {{ tag }}
-                            </button>
+                        {% for tag in tags %}
+                            {% if tag.1 == 0 %} <!-- technology -->
+                                <button class="btn btn-primary btn-sm" type="button">
+                                    {{ tag.0 }}
+                                </button>
+                            {% elif tag.1 == 1 %} <!-- skills -->
+                                <button class="btn btn-success btn-sm" type="button">
+                                    {{ tag.0 }}
+                                </button>
+                            {% elif tag.1 == 2 %} <!-- jobs -->
+                                <button class="btn btn-info btn-sm" type="button">
+                                    {{ tag.0 }}
+                                </button>
+                            {% elif tag.1 == 3 %} <!-- personal -->
+                                <button class="btn btn-light btn-sm" type="button">
+                                    {{ tag.0 }}
+                                </button>
+                            {% else %} <!-- else -->
+                                <button class="btn btn-dark btn-sm" type="button">
+                                    {{ tag.0 }}
+                                </button>
+                            {% endif %}
                         {% endfor %}
                     </div>
                 </div>

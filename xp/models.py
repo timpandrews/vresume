@@ -13,7 +13,8 @@ STATUS = (
 TAG_TYPES = (
     (0, "Technology"),
     (1, "Skills"),
-    (2, "Personal"),
+    (2, "Jobs"),
+    (3, "Personal"),
 )
 
 class Xp(models.Model):
@@ -39,6 +40,7 @@ class Xp(models.Model):
 
 class TagType(models.Model):
     tag = models.OneToOneField(Tag, on_delete=models.CASCADE)
+    tag_name = models.CharField(max_length=25, blank=True)
     tag_type = models.IntegerField(choices=TAG_TYPES, default=0)
 
 @receiver(post_save, sender=Tag)

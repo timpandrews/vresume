@@ -31,9 +31,9 @@ admin.site.register(TaggedItem, TaggedItemAdmin)
 
 
 class TagTypeAdmin(admin.ModelAdmin):
-    list_display = ('tag','tag_type')
+    list_display = ('tag', 'tag_name', 'tag_type')
     list_display_links = ('tag'),
-    list_editable = ('tag_type'),
+    list_editable = ('tag_name', 'tag_type')
 admin.site.register(TagType, TagTypeAdmin)
 
 
