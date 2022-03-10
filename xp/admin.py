@@ -7,7 +7,8 @@ from xp.models import Xp
 
 
 class XpAdmin(SummernoteModelAdmin):
-    list_display = ('id', 'title', 'slug', 'author', 'status', 'sort_override', 'created_at', 'updated_at', 'hero_image',)
+    list_display = ('id', 'title', 'slug', 'author', 'status',
+                    'sort_override', 'created_at', 'updated_at', 'hero_image',)
     list_editable = ('status'),
     list_filter = ('status',)
     search_fields = ['title', 'content']
@@ -17,9 +18,15 @@ class XpAdmin(SummernoteModelAdmin):
     summernote_fields = ('content')
     verbose_name = 'Xp'
 
+
 admin.site.register(Xp, XpAdmin)
 
 
 class TaggedItemAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('id', 'tag_id', 'tag', 'object_id',
+                    'content_object', 'content_type_id', 'content_type')
+    list_display_links = ('id', 'tag_id', 'tag', 'object_id',
+                          'content_object', 'content_type_id', 'content_type')
+
+
 admin.site.register(TaggedItem, TaggedItemAdmin)
