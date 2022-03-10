@@ -18,6 +18,13 @@
                         </p>
                         <p class="card-text">{{ object.content | safe }}</p>
                     </div>
+                    <div>
+                        {% for tag in names %}
+                            <button class="btn btn-primary btn-sm" type="button">
+                                {{ tag }}
+                            </button>
+                        {% endfor %}
+                    </div>
                 </div>
                 {% block sidebar %}{% include 'partials/_xp_sidebar.html' %}{% endblock sidebar %}
             </div>

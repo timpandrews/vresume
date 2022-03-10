@@ -28,8 +28,15 @@ class XpDetail(generic.DetailView):
         # Call the base implementation first to get the context
         context = super(XpDetail, self).get_context_data(**kwargs)
         # Create any data and add it to the context
+        
         # Get URL to resume stored in db
         # Hardcoded for name= for now
         resume_url = Resume.objects.filter(name='Tim Andrews').only('filename').first()
         context['resume_url'] = resume_url
+
+        context['names'] = self.object.tags.names()
+        context["related_items"] = self.object.tags.similar_objects()[:4]
+        print('context:', context)
+
+
         return context
