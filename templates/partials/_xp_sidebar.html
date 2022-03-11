@@ -3,9 +3,37 @@
 <!-- Sidebar Search Column -->
 <div class="col-md-4 card mb-4 mt-3 float-right ">
     <div class="card my-4">
-        <h5 class="card-header">Blog Sidebar</h5>
+        <h5 class="card-header">Tags</h5>
         <div class="card-body">
-            <p class="card-text">Search by jobs, projects, skills, etc.</p>
+            <p class="card-text">View Posts by tags (technology, skills, jobs, personal</p>
+            <p>
+                {% for tag in technology_tags %}
+                    <button class="btn btn-primary btn-sm mb-2" type="button">
+                        <i class="fa-solid fa-tag"></i> {{ tag.0 }}
+                    </button>
+                {% endfor %}
+            </p>
+            <p>
+                {% for tag in skill_tags %}
+                    <button class="btn btn-success btn-sm mb-2" type="button">
+                        <i class="fa-solid fa-tag"></i> {{ tag.0 }}
+                    </button>
+                {% endfor %}
+            </p>
+            <p>
+                {% for tag in job_tags %}
+                    <button class="btn btn-info btn-sm mb-2" type="button">
+                        <i class="fa-solid fa-tag"></i> {{ tag.0 }}
+                    </button>
+                {% endfor %}
+            </p>
+            <p>
+                {% for tag in personal_tags %}
+                    <button class="btn btn-secondary btn-sm mb-2" type="button">
+                        <i class="fa-solid fa-tag"></i> {{ tag.0 }}
+                    </button>
+                {% endfor %}
+            </p>
         </div>
     </div>
 </div>

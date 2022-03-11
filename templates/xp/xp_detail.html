@@ -19,7 +19,7 @@
                         <p class="card-text">{{ object.content | safe }}</p>
                     </div>
                     <div>
-                        {% for tag in tags %}
+                        {% for tag in xp_tags %}
                             {% if tag.1 == 0 %} <!-- technology -->
                                 <button class="btn btn-primary btn-sm mb-2" type="button">
                                     <i class="fa-solid fa-tag"></i> {{ tag.0 }}
