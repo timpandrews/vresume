@@ -21,25 +21,25 @@
                     <div>
                         {% for tag in xp_tags %}
                             {% if tag.1 == 0 %} <!-- technology -->
-                                <button class="btn btn-primary btn-sm mb-2" type="button">
+                                <a href="{% url 'xp' %}?tag={{tag.0}}" class="btn btn-primary btn-sm mb-2" type="button">
                                     <i class="fa-solid fa-tag"></i> {{ tag.0 }}
-                                </button>
+                                </a>
                             {% elif tag.1 == 1 %} <!-- skills -->
-                                <button class="btn btn-success btn-sm mb-2" type="button">
+                                <a href="{% url 'xp' %}?tag={{tag.0}}" class="btn btn-success btn-sm mb-2" type="button">
                                     <i class="fa-solid fa-tag"></i> {{ tag.0 }}
-                                </button>
+                                </a>
                             {% elif tag.1 == 2 %} <!-- jobs -->
-                                <button class="btn btn-info btn-sm mb-2" type="button">
+                                <a href="{% url 'xp' %}?tag={{tag.0}}" class="btn btn-info btn-sm mb-2" type="button">
                                     <i class="fa-solid fa-tag"></i> {{ tag.0 }}
-                                </button>
+                                </a>
                             {% elif tag.1 == 3 %} <!-- personal -->
-                                <button class="btn btn-secondary btn-sm mb-2" type="button">
+                                <a href="{% url 'xp' %}?tag={{tag.0}}" class="btn btn-secondary btn-sm mb-2" type="button">
                                     <i class="fa-solid fa-tag"></i> {{ tag.0 }}
-                                </button>
+                                </a>
                             {% else %} <!-- else -->
-                                <button class="btn btn-dark btn-sm mb-2" type="button">
+                                <a href="{% url 'xp' %}?tag={{tag.0}}" class="btn btn-dark btn-sm mb-2" type="button">
                                     <i class="fa-solid fa-tag"></i> {{ tag.0 }}
-                                </button>
+                                </a>
                             {% endif %}
                         {% endfor %}
                     </div>

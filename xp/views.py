@@ -35,8 +35,13 @@ def get_tags(tag_type):
 
 
 class XpList(generic.ListView):
-    queryset = Xp.objects.filter(status=1).order_by(
-        'sort_override', '-created_at')
+    def get_queryset(self):
+        tag = self.request.GET.get('tag')
+        if tag:
+            return Xp.objects.filter(tags__name__in=[tag], status=1).order_by('sort_override', '-created_at')
+        else:
+            return Xp.objects.filter(status=1).order_by('sort_override', '-created_at')
+    
     template_name = 'xp/xp.html'
     paginate_by = 3
 
@@ -55,7 +60,10 @@ class XpList(generic.ListView):
         context['skill_tags'] = get_tags(1)
         context['job_tags'] = get_tags(2)
         context['personal_tags'] = get_tags(3)
-        
+
+        # Get tag title info
+        context['tag_title'] = self.request.GET.get('tag')
+
         return context
 
 

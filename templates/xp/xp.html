@@ -9,6 +9,15 @@
         <div class='container'>
             <div class='row'>
                 <div class="col-md-8 card mb-4 mt-3 left top">
+                    {% if tag_title %}
+                        <h3 class="mx-auto mt-2">
+                            Cards tagged with:
+                            <a href="{% url 'xp' %}?tag={{ tag_title }}" class="btn btn-light btn-sm" >
+                                <i class="fa-solid fa-tag"></i> {{ tag_title }}
+                            </a>
+                        </h3>
+                    {% endif %}
+                 
                     <div class="card-body">
                         {% for item in xp_list %}
                             <div class='card mb-4'>
