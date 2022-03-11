@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # Installed Apps
     'django_extensions',
     'django_summernote',
+    'taggit',
     # My Local Apps
     'pages.apps.PagesConfig',
     'xp.apps.XpConfig',
@@ -145,6 +146,9 @@ MEDIA_URL = 'media/'
 # Summernote editor
 SUMMERNOTE_THEME = 'bs4'
 X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+# django-taggit
+TAGGIT_CASE_INSENSITIVE = True
 
 
 try:
