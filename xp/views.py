@@ -40,7 +40,6 @@ class XpDetail(generic.DetailView):
         for tag in names:
             list = (tag, 'type')
             type = TagType.objects.filter(tag_name=tag).values('tag_type')
-            print('type:', type)
             if type:
                 type = type.values()[0]['tag_type']
             else:
