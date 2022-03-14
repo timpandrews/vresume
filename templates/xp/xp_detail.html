@@ -17,7 +17,7 @@
                             {% block title %} {{ object.title }} {% endblock title %}
                         </h1>
                         <p class="text-muted">
-                            {{ xp.author }} | {{ xp.created_at }}
+                            {{ author_name }} | {{ xp.created_at }}
                         </p>
                         <p class="card-text">{{ object.content | safe }}</p>
                     </div>

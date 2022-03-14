@@ -5,6 +5,8 @@ from pages.models import Resume
 
 from xp.models import Xp, TagType
 
+# manually assign name 
+author = 'Tim Andrews'
 
 def get_xp_tags(names):
     tags = []
@@ -29,8 +31,7 @@ def get_tags(tag_type):
         lst.append(tag['tag_name'])
         lst.append(tag['tag_type'])
         tags.append(lst)
-    print(tags)
-
+    
     return tags
 
 
@@ -64,6 +65,9 @@ class XpList(generic.ListView):
         # Get tag title info
         context['tag_title'] = self.request.GET.get('tag')
 
+        # Get full author name
+        context['author_name'] = author
+
         return context
 
 
@@ -93,5 +97,8 @@ class XpDetail(generic.DetailView):
         context['skill_tags'] = get_tags(1)
         context['job_tags'] = get_tags(2)
         context['personal_tags'] = get_tags(3)
+
+        # Get full author name
+        context['author_name'] = author
         
         return context
