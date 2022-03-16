@@ -8,7 +8,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', include('pages.urls')),
     path('', include('xp.urls')),
-    path('admin/', admin.site.urls),
+    path('honcho/', admin.site.urls),
+    path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
     path('summernote/', include('django_summernote.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

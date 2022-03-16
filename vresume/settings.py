@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'django_summernote',
     'taggit',
+    'admin_honeypot',
     # My Local Apps
     'pages.apps.PagesConfig',
     'xp.apps.XpConfig',
