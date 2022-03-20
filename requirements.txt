@@ -1,9 +1,11 @@
+## Known Issues ##
+# django-admin-honeypot does not work with django 4.0 ==> using Django 3.2.12 (LTS)
 asgiref==3.5.0
 autopep8==1.6.0
 backports.zoneinfo==0.2.1
 bleach==4.1.0
 Django==3.2.12
-django-admin-honeypot==1.1.0
+django-admin-honeypot==1.1.0 
 django-extensions==3.1.5
 django-summernote==0.8.20.0
 django-taggit==2.1.0
