@@ -16,3 +16,4 @@ _theme_source/
 **/migrations/**
 vresume/prod_settings.py
 
+vresume/_prod_settings.py
