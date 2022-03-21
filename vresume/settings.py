@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'taggit',
     'admin_honeypot',
+    'fontawesomefree',
     # My Local Apps
     'pages.apps.PagesConfig',
     'xp.apps.XpConfig',
@@ -57,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'csp.middleware.CSPMiddleware',
 ]
 
 ROOT_URLCONF = 'vresume.urls'
@@ -72,6 +74,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'csp.context_processors.nonce',
             ],
         },
     },
@@ -130,7 +133,6 @@ USE_TZ = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
@@ -150,6 +152,55 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 # django-taggit
 TAGGIT_CASE_INSENSITIVE = True
+
+# CSP Configuration
+# https://django-csp.readthedocs.io/en/latest/configuration.html
+CSP_DEFAULT_SRC = ["'none'"]
+CSP_STYLE_SRC = [
+    "'unsafe-inline'",
+    "'self'",
+    "https://fonts.gstatic.com",
+    "https://ka-f.fontawesome.com",
+    "https://fonts.googleapis.com",
+    "https://stackpath.bootstrapcdn.com",
+    "https://cdn.jsdelivr.net",
+    "https://cdnjs.cloudflare.com",
+]
+CSP_SCRIPT_SRC = [
+    "'unsafe-inline'",
+    "'self'",
+    "https://fonts.gstatic.com",
+    "https://ka-f.fontawesome.com",
+    "https://fonts.googleapis.com",
+    "https://cdn.jsdelivr.net",
+    "https://stackpath.bootstrapcdn.com",
+    "https://cdn.jsdelivr.net",
+    "https://code.jquery.com",
+]
+CSP_IMG_SRC = ["'self'"]
+CSP_INCLUDE_NONCE_IN = ["script-src"]
+CSP_FONT_SRC = (
+    "'self'", 
+    "https://fonts.gstatic.com",
+    "https://ka-f.fontawesome.com",
+)
+CSP_CONNECT_SRC = (
+    "'self'",
+    "https://fonts.gstatic.com",
+    "https://ka-f.fontawesome.com",
+)
+CSP_OBJECT_SRC = ("'self'", )
+CSP_BASE_URI = ("'self'", )
+CSP_FRAME_ANCESTORS = ("'self'", )
+CSP_FORM_ACTION = ("'self'", )
+CSP_INCLUDE_NONCE_IN = ('script-src', )
+CSP_MANIFEST_SRC = ("'self'", )
+CSP_WORKER_SRC = ("'self'", )
+CSP_MEDIA_SRC = ("'self'", )
+# CSP_REPORT_URI = ["https://justtim.report-uri.com/r/d/csp/reportOnly"]
+# CSP_REPORT_ONLY = True
+CSP_UPGRADE_INSECURE_REQUESTS = not DEBUG
+CSP_REPORT_PERCENTAGE = 0.6
 
 
 try:
