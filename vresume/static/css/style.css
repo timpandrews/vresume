@@ -23,4 +23,17 @@
     }
 }
 
+.tools_icon {
+    width: 75px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    float: left
+}
 
+.tools_div {
+
+}
+
+.v_center {
+    margin-top: 10px;
+  }
