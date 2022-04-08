@@ -31,9 +31,38 @@
 }
 
 .tools_div {
-
+    margin-left: 10px; 
 }
 
 .v_center {
     margin-top: 10px;
-  }
+}
+
+.icon_bg {
+    width: 75px;
+    height: 75px;
+    border-radius: 10%;
+    text-align: center;
+    line-height: 100px;
+    vertical-align: middle;
+    padding-top: 18px;
+}
+
+.icon_primary {
+    background: var(--primary);
+    color: white;
+}
+
+.icon_secondary {
+    background: var(--secondary);
+}
+
+.icon_success {
+    background: var(--success);
+}
+
+.icon_info {
+    background: var(--info);
+}
+
+
